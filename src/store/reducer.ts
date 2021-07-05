@@ -3,6 +3,7 @@ export interface Company {
   label: string;
   vision: number;
   ability: number;
+  checked?: boolean;
 }
 
 export const initialState: Company[] = JSON.parse(localStorage.getItem('companies') || '[]');

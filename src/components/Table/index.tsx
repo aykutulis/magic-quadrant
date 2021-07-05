@@ -16,6 +16,7 @@ const Table: React.FC = () => {
       label: 'New',
       vision: 50,
       ability: 50,
+      checked: false,
     };
 
     dispatch({ type: ActionTypes.addCompany, payload: newCompany });
@@ -27,6 +28,7 @@ const Table: React.FC = () => {
       <table>
         <thead>
           <tr>
+            <TableHeader width='3rem'></TableHeader>
             <TableHeader width='16rem'>Label</TableHeader>
             <TableHeader>Vision</TableHeader>
             <TableHeader>Ability</TableHeader>

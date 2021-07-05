@@ -23,7 +23,7 @@ const Point: React.FC<CompanyProps> = ({ company }) => {
 
   return (
     <Container
-      style={{ bottom: `${company.ability}%`, left: `${company.vision}%` }}
+      style={{ bottom: `${company.ability}%`, left: `${company.vision}%`, opacity: company.checked ? '1' : '0.4' }}
       draggable
       onDrag={handleDrag}
       onDragOver={(e) => e.preventDefault()}

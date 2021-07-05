@@ -18,11 +18,25 @@ const TableItem: React.FC<TableItemProps> = ({ company }) => {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.name === 'checkbox') {
+      dispatch({ type: ActionTypes.updateCompany, payload: { ...company, checked: !company.checked } });
+      return;
+    }
+
     dispatch({ type: ActionTypes.updateCompany, payload: { ...company, [e.target.name]: e.target.value } });
   };
 
   return (
     <tr>
+      <TableCell>
+        <input
+          type='checkbox'
+          checked={company.checked}
+          name='checkbox'
+          value={company.label}
+          onChange={handleChange}
+        />
+      </TableCell>
       <TableCell>
         <input type='text' name='label' value={company.label} onChange={handleChange} />
       </TableCell>
