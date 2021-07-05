@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import TableItem from './components/TableItem';
 import { Container, TableHeader } from './index.styles';
 import { Button } from '../../shared/Button';
@@ -7,14 +7,6 @@ import { ActionTypes } from '../../store/reducer';
 
 const Table: React.FC = () => {
   const { state, dispatch } = useContext(Context);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      localStorage.setItem('companies', JSON.stringify(state));
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [state]);
 
   const handleAdd = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
