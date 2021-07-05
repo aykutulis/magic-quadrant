@@ -23,3 +23,11 @@ export const Label = styled.div`
     transform: translate(100%, 100%);
   `}
 `;
+
+export const RedSquare = styled.div`
+  border: 1px dashed red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+`;
