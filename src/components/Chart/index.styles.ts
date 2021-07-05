@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   ${({ theme: { colors } }) => css`
     box-sizing: content-box;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
     border: 2px solid ${colors.DARK_GREY};
     position: relative;
   `}

@@ -12,10 +12,11 @@ const Point: React.FC<CompanyProps> = ({ company }) => {
 
   const handleDrag = (e: React.DragEvent<HTMLDivElement>) => {
     const parent = (e.target as HTMLDivElement).parentElement!.getBoundingClientRect();
+
     const updatedCompany = {
       ...company,
-      ability: -((e.clientY - parent.y) / 4 - 100).toFixed(2),
-      vision: +((e.clientX - parent.x) / 4).toFixed(2),
+      ability: -((e.clientY - parent.y - 500) / 5).toFixed(2),
+      vision: +((e.clientX - parent.x) / 5).toFixed(2),
     };
     dispatch({ type: ActionTypes.updateCompany, payload: updatedCompany });
   };
