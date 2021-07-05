@@ -61,33 +61,3 @@ export const AreaLabel = styled.div<AreaLabelProps>`
     transform: translateX(${area.includes('left') ? '-50%' : '50%'});
   `}
 `;
-
-interface PointProps {
-  top: number;
-  left: number;
-}
-
-export const Point = styled.div<PointProps>`
-  ${({ top, left, theme: { colors } }) => css`
-    width: 15px;
-    height: 15px;
-    background-color: ${colors.DARK_BLUE};
-    border-radius: 50%;
-    position: absolute;
-    top: ${top}%;
-    left: ${left}%;
-    transform: translate(-50%, -50%);
-  `}
-`;
-
-export const PointLabel = styled.div`
-  ${({ theme: { colors } }) => css`
-    font-family: sans-serif;
-    font-size: 13px;
-    color: ${colors.DARK_BLUE};
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    transform: translate(100%, 100%);
-  `}
-`;

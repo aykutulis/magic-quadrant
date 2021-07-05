@@ -1,7 +1,11 @@
-import React from 'react';
-import { Container, AxisLabel, InnerAxis, AreaLabel, Point, PointLabel } from './index.styles';
+import React, { useContext } from 'react';
+import { Container, AxisLabel, InnerAxis, AreaLabel } from './index.styles';
+import Point from './components/Point';
+import { Context } from '../../store/context';
 
 const Chart: React.FC = () => {
+  const { state } = useContext(Context);
+
   return (
     <Container>
       <AxisLabel axis='x'>Completeness of vision &#8594;</AxisLabel>
@@ -12,9 +16,9 @@ const Chart: React.FC = () => {
       <AreaLabel area='top-right'>Leaders</AreaLabel>
       <AreaLabel area='bottom-left'>Niche Players</AreaLabel>
       <AreaLabel area='bottom-right'>Visionaries</AreaLabel>
-      <Point top={50} left={50}>
-        <PointLabel>Microsoft</PointLabel>
-      </Point>
+      {state.map((company) => (
+        <Point key={company.id} company={company} />
+      ))}
     </Container>
   );
 };
